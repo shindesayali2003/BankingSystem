@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBank - Online Banking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage">
+        <div class="login-box">
+            <div class="logo">Secure<span>Bank</span></div>
+            <p class="subtitle">Welcome to Online Banking</p>
+
+            <form id="loginForm">
+                <label>Customer ID</label>
+                <input type="text" id="customerId" placeholder="Enter customer ID" required>
+
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+
+                <button type="submit" class="btn">Login</button>
+
+                <!-- <p class="demo">
+                    Demo Login: <b>admin</b> / <b>1234</b>
+                </p> -->
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboardPage">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="side-logo">Secure<span>Bank</span></div>
+
+            <nav>
+                <a href="#" class="active" onclick="showSection('dashboard')">
+                    🏠 Dashboard
+                </a>
+                <a href="#" onclick="showSection('accounts')">
+                    💳 My Accounts
+                </a>
+                <a href="#" onclick="showSection('transactions')">
+                    📊 Transactions
+                </a>
+                <a href="#" onclick="showSection('transfer')">
+                    💸 Transfer Money
+                </a>
+                <a href="#" onclick="showSection('loans')">
+                    🏦 Loans
+                </a>
+            </nav>
+
+            <button class="logout" onclick="logout()">Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header>
+                <div>
+                    <h1 id="welcomeText"> , Rahul 👋</h1>
+                    <p>Welcome back to your banking dashboard.</p>
+                </div>
+
+                <div class="profile">
+                    <div class="profile-circle">R</div>
+                    <span>Rahul Sharma</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section">
+
+                <div class="cards">
+
+                    <div class="card balance-card">
+                        <div class="card-title">
+                            <span>Total Balance</span>
+                            <span>💰</span>
+                        </div>
+                        <h2 id="balance">₹85,450.00</h2>
+                        <p>Available Balance</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">
+                            <span>Savings Account</span>
+                            <span>🏦</span>
+                        </div>
+                        <h2>₹65,450.00</h2>
+                        <p>**** 4589</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">
+                            <span>Credit Card</span>
+                            <span>💳</span>
+                        </div>
+                        <h2>₹20,000.00</h2>
+                        <p>Available Credit</p>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+
+                    <div class="action-grid">
+                        <button onclick="showSection('transfer')">
+                            💸<br>
+                            Transfer Money
+                        </button>
+
+                        <button onclick="showSection('transactions')">
+                            📊<br>
+                            View Transactions
+                        </button>
+
+                        <button onclick="showSection('accounts')">
+                            💳<br>
+                            Account Details
+                        </button>
+
+                        <button onclick="showSection('loans')">
+                            🏦<br>
+                            Apply for Loan
+                        </button>
+                    </div>
+                </div>
+
+                <div class="recent">
+                    <div class="section-heading">
+                        <h2>Recent Transactions</h2>
+                        <button onclick="showSection('transactions')">
+                            View All
+                        </button>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="recentTransactions">
+                                <tr>
+                                    <td>Amazon Shopping</td>
+                                    <td>28 Sep 2026</td>
+                                    <td><span class="debit">Debit</span></td>
+                                    <td class="negative">-₹2,499</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Salary Credit</td>
+                                    <td>27 Sep 2026</td>
+                                    <td><span class="credit">Credit</span></td>
+                                    <td class="positive">+₹55,000</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Electricity Bill</td>
+                                    <td>25 Sep 2026</td>
+                                    <td><span class="debit">Debit</span></td>
+                                    <td class="negative">-₹1,850</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Accounts Section -->
+            <section id="accounts" class="content-section hidden">
+                <h2>My Accounts</h2>
+
+                <div class="account-details">
+                    <div class="account-box">
+                        <h3>🏦 Savings Account</h3>
+                        <p>Account Number</p>
+                        <h3>XXXX XXXX 4589</h3>
+
+                        <p>Available Balance</p>
+                        <h2>₹65,450.00</h2>
+
+                        <p>IFSC Code: SECB0001234</p>
+                        <p>Branch: Pune Main Branch</p>
+                    </div>
+
+                    <div class="account-box">
+                        <h3>💳 Credit Card</h3>
+                        <p>Card Number</p>
+                        <h3>XXXX XXXX XXXX 7821</h3>
+
+                        <p>Available Credit</p>
+                        <h2>₹20,000.00</h2>
+
+                        <p>Card Type: Platinum</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transactions Section -->
+            <section id="transactions" class="content-section hidden">
+                <h2>Transaction History</h2>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Amazon Shopping</td>
+                                <td>28 Sep 2026</td>
+                                <td><span class="debit">Debit</span></td>
+                                <td class="negative">-₹2,499</td>
+                            </tr>
+
+                            <tr>
+                                <td>Salary Credit</td>
+                                <td>27 Sep 2026</td>
+                                <td><span class="credit">Credit</span></td>
+                                <td class="positive">+₹55,000</td>
+                            </tr>
+
+                            <tr>
+                                <td>Electricity Bill</td>
+                                <td>25 Sep 2026</td>
+                                <td><span class="debit">Debit</span></td>
+                                <td class="negative">-₹1,850</td>
+                            </tr>
+
+                            <tr>
+                                <td>UPI Transfer</td>
+                                <td>22 Sep 2026</td>
+                                <td><span class="debit">Debit</span></td>
+                                <td class="negative">-₹3,000</td>
+                            </tr>
+
+                            <tr>
+                                <td>Interest Credit</td>
+                                <td>20 Sep 2026</td>
+                                <td><span class="credit">Credit</span></td>
+                                <td class="positive">+₹750</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Transfer Section -->
+            <section id="transfer" class="content-section hidden">
+                <h2>Transfer Money</h2>
+
+                <div class="transfer-box">
+                    <form id="transferForm">
+
+                        <label>Beneficiary Name</label>
+                        <input type="text" id="beneficiary"
+                               placeholder="Enter beneficiary name" required>
+
+                        <label>Account Number</label>
+                        <input type="text" id="accountNumber"
+                               placeholder="Enter account number" required>
+
+                        <label>IFSC Code</label>
+                        <input type="text"
+                               placeholder="Enter IFSC code" required>
+
+                        <label>Amount</label>
+                        <input type="number" id="transferAmount"
+                               placeholder="Enter amount" min="1" required>
+
+                        <button type="submit" class="btn">
+                            Transfer Money
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Loans Section -->
+            <section id="loans" class="content-section hidden">
+                <h2>Loan Services</h2>
+
+                <div class="loan-grid">
+
+                    <div class="loan-card">
+                        <div class="loan-icon">🏠</div>
+                        <h3>Home Loan</h3>
+                        <p>Interest Rate from 8.5%</p>
+                        <button>Learn More</button>
+                    </div>
+
+                    <div class="loan-card">
+                        <div class="loan-icon">🚗</div>
+                        <h3>Car Loan</h3>
+                        <p>Interest Rate from 9.2%</p>
+                        <button>Learn More</button>
+                    </div>
+
+                    <div class="loan-card">
+                        <div class="loan-icon">💼</div>
+                        <h3>Personal Loan</h3>
+                        <p>Interest Rate from 10.5%</p>
+                        <button>Learn More</button>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

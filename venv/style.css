@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    color: #172033;
+}
+
+/* Login */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #071b52, #1261c9);
+}
+
+.login-box {
+    width: 400px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.logo,
+.side-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1261c9;
+    text-align: center;
+}
+
+.logo span,
+.side-logo span {
+    color: #18a66b;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin: 10px 0 30px;
+}
+
+.login-box label,
+.transfer-box label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5dbe5;
+    border-radius: 7px;
+    outline: none;
+    font-size: 15px;
+}
+
+input:focus {
+    border-color: #1261c9;
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    padding: 13px;
+    margin-top: 20px;
+    background: #1261c9;
+    color: white;
+    font-size: 16px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #094d9e;
+}
+
+.demo {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+    font-size: 13px;
+}
+
+/* Dashboard */
+
+.dashboard {
+    display: none;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    background: #071b52;
+    color: white;
+    padding: 30px 15px;
+}
+
+.side-logo {
+    color: white;
+    margin-bottom: 40px;
+}
+
+.side-logo span {
+    color: #42d39b;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 14px;
+    margin-bottom: 8px;
+    color: #dce6ff;
+    text-decoration: none;
+    border-radius: 7px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #1261c9;
+    color: white;
+}
+
+.logout {
+    position: absolute;
+    bottom: 30px;
+    left: 15px;
+    width: calc(100% - 30px);
+    padding: 12px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.main-content {
+    margin-left: 240px;
+    padding: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 25px;
+}
+
+header p {
+    color: #777;
+    margin-top: 5px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.profile-circle {
+    width: 42px;
+    height: 42px;
+    background: #1261c9;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.balance-card {
+    background: linear-gradient(135deg, #1261c9, #07377d);
+    color: white;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+}
+
+.balance-card .card-title {
+    color: #dceaff;
+}
+
+.card h2 {
+    margin: 20px 0 8px;
+    font-size: 28px;
+}
+
+.card p {
+    color: #888;
+}
+
+.balance-card p {
+    color: #cbdcff;
+}
+
+/* Quick Actions */
+
+.quick-actions,
+.recent {
+    background: white;
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.quick-actions h2,
+.recent h2,
+.content-section > h2 {
+    margin-bottom: 20px;
+}
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.action-grid button {
+    padding: 20px;
+    background: #f3f7ff;
+    color: #1261c9;
+    border: 1px solid #dce7fa;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.action-grid button:hover {
+    background: #1261c9;
+    color: white;
+}
+
+/* Tables */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-heading button {
+    border: none;
+    background: transparent;
+    color: #1261c9;
+    cursor: pointer;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    color: #777;
+    font-size: 14px;
+}
+
+.positive {
+    color: #15945d;
+    font-weight: bold;
+}
+
+.negative {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.credit,
+.debit {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.credit {
+    background: #e4f8ef;
+    color: #15945d;
+}
+
+.debit {
+    background: #fde9e7;
+    color: #e74c3c;
+}
+
+/* Sections */
+
+.hidden {
+    display: none;
+}
+
+.account-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.account-box,
+.transfer-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.account-box h3 {
+    margin-bottom: 20px;
+}
+
+.account-box p {
+    color: #777;
+    margin-top: 15px;
+}
+
+/* Loans */
+
+.loan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.loan-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.loan-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.loan-card p {
+    color: #777;
+    margin: 15px 0;
+}
+
+.loan-card button {
+    background: #1261c9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .cards,
+    .loan-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .action-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .account-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .logout {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .login-box {
+        width: 90%;
+    }
+
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+}
